@@ -285,8 +285,7 @@ myApp.put("/todos/:todoId/", async (request, response) => {
           break;
         }
       case reqBody.dueDate !== undefined:
-        const createdDate = format(new Date(reqBody.dueDate), "yyyy-MM-dd");
-        const parseDate = isValid(new Date(createdDate));
+        const parseDate = isValid(new Date(reqBody.dueDate));
         if (parseDate === true) {
           ColumnUpdate = "Due Date";
           break;
